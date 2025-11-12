@@ -1,25 +1,2008 @@
-<!DOCTYPE html> <!-- Indica que este documento es HTML5 -->
-<html> <!-- Inicio del documento HTML -->
-<head> <!Cabecera: aquí va la configuración de la página -->
-<meta charset="UTF-8"> <!-- Permite usar caracteres especiales como tildes y ñ -->
-<title>Mi primera página</title> <!-- Título que aparece en la pestaña del navegador -
-->
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Uma Musume: Pretty Derby - El Fenómeno Global</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+
+        :root {
+
+            --primary: #FFC107;
+
+            --primary-dark: #FFA000;
+
+            --secondary: #EC407A;
+
+            --text-dark: #333333;
+
+            --text-light: #777777;
+
+            --bg-light: #FFF9C4;
+
+            --white: #ffffff;
+
+            --shadow: 0 4px 15px rgba(255, 193, 7, 0.2);
+
+            --transition: all 0.3s ease;
+
+            --gradient: linear-gradient(135deg, #FFC107 0%, #EC407A 100%);
+
+        }
+
+        
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+
+        body {
+
+            font-family: 'Inter', sans-serif;
+
+            line-height: 1.6;
+
+            color: var(--text-dark);
+
+            background-color: var(--bg-light);
+
+        }
+
+
+
+        .container {
+
+            width: 100%;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 20px;
+
+        }
+
+
+
+        /* Header Styles */
+
+        header {
+
+            background-color: var(--white);
+
+            box-shadow: var(--shadow);
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 100;
+
+        }
+
+
+
+        .header-container {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 15px 0;
+
+        }
+
+
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            font-weight: 700;
+
+            font-size: 1.5rem;
+
+            color: var(--primary);
+
+            text-decoration: none;
+
+        }
+
+
+
+        .logo-img {
+
+            height: 50px;
+
+            margin-right: 10px;
+
+        }
+
+
+
+        .nav-menu {
+
+            display: flex;
+
+            list-style: none;
+
+        }
+
+
+
+        .nav-menu li {
+
+            margin-left: 30px;
+
+        }
+
+
+
+        .nav-menu a {
+
+            text-decoration: none;
+
+            color: var(--text-dark);
+
+            font-weight: 500;
+
+            transition: var(--transition);
+
+            position: relative;
+
+        }
+
+
+
+        .nav-menu a:hover {
+
+            color: var(--primary);
+
+        }
+
+
+
+        .nav-menu a::after {
+
+            content: '';
+
+            position: absolute;
+
+            width: 0;
+
+            height: 2px;
+
+            bottom: -5px;
+
+            left: 0;
+
+            background-color: var(--primary);
+
+            transition: var(--transition);
+
+        }
+
+
+
+        .nav-menu a:hover::after {
+
+            width: 100%;
+
+        }
+
+
+
+        .hamburger {
+
+            display: none;
+
+            cursor: pointer;
+
+            font-size: 1.5rem;
+
+        }
+
+
+
+        /* Hero Section */
+
+        .hero {
+
+            background: var(--gradient);
+
+            color: var(--white);
+
+            padding: 80px 0;
+
+            text-align: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+
+        .hero::before {
+
+            content: '';
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            right: 0;
+
+            bottom: 0;
+
+            background: url('https://static.wikia.nocookie.net/umamusume/images/e/e0/Meisho_Doto_%28Main%29.png/revision/latest/scale-to-width/360?cb=20240731192544') no-repeat center right;
+
+            background-size: contain;
+
+            opacity: 0.2;
+
+            z-index: 0;
+
+        }
+
+
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 1;
+
+        }
+
+
+
+        .hero-logo {
+
+            max-width: 400px;
+
+            margin: 0 auto 30px;
+
+        }
+
+
+
+        .hero-logo img {
+
+            width: 100%;
+
+            height: auto;
+
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+
+        }
+
+
+
+        .hero h1 {
+
+            font-size: 3rem;
+
+            margin-bottom: 20px;
+
+            font-weight: 700;
+
+        }
+
+
+
+        .hero p {
+
+            font-size: 1.2rem;
+
+            max-width: 700px;
+
+            margin: 0 auto 30px;
+
+            opacity: 0.9;
+
+        }
+
+
+
+        .btn {
+
+            display: inline-block;
+
+            background-color: var(--white);
+
+            color: var(--primary);
+
+            padding: 12px 30px;
+
+            border-radius: 50px;
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            box-shadow: var(--shadow);
+
+            transition: var(--transition);
+
+            border: none;
+
+            cursor: pointer;
+
+        }
+
+
+
+        .btn:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+        }
+
+
+
+        .btn-secondary {
+
+            background-color: transparent;
+
+            color: var(--white);
+
+            border: 2px solid var(--white);
+
+        }
+
+
+
+        .btn-secondary:hover {
+
+            background-color: var(--white);
+
+            color: var(--primary);
+
+        }
+
+
+
+        /* Section Styles */
+
+        section {
+
+            padding: 80px 0;
+
+        }
+
+
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 50px;
+
+        }
+
+
+
+        .section-title h2 {
+
+            font-size: 2.5rem;
+
+            color: var(--text-dark);
+
+            margin-bottom: 15px;
+
+            position: relative;
+
+            display: inline-block;
+
+        }
+
+
+
+        .section-title h2::after {
+
+            content: '';
+
+            position: absolute;
+
+            width: 70px;
+
+            height: 4px;
+
+            background-color: var(--primary);
+
+            bottom: -10px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            border-radius: 2px;
+
+        }
+
+
+
+        .section-title p {
+
+            color: var(--text-light);
+
+            max-width: 700px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        /* Card Styles */
+
+        .card {
+
+            background-color: var(--white);
+
+            border-radius: 10px;
+
+            box-shadow: var(--shadow);
+
+            overflow: hidden;
+
+            transition: var(--transition);
+
+            margin-bottom: 30px;
+
+        }
+
+
+
+        .card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+
+        }
+
+
+
+        .card-content {
+
+            padding: 30px;
+
+        }
+
+
+
+        .card h3 {
+
+            font-size: 1.5rem;
+
+            margin-bottom: 15px;
+
+            color: var(--text-dark);
+
+        }
+
+
+
+        .card p {
+
+            color: var(--text-light);
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        .card-icon {
+
+            font-size: 2.5rem;
+
+            color: var(--primary);
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        /* Image Styles */
+
+        .image-container {
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            box-shadow: var(--shadow);
+
+            margin: 20px 0;
+
+        }
+
+
+
+        .image-container img {
+
+            width: 100%;
+
+            height: auto;
+
+            display: block;
+
+            transition: var(--transition);
+
+        }
+
+
+
+        .image-container:hover img {
+
+            transform: scale(1.05);
+
+        }
+
+
+
+        /* Embedded Content */
+
+        .embedded-content {
+
+            width: 100%;
+
+            height: 400px;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            box-shadow: var(--shadow);
+
+            margin: 30px 0;
+
+        }
+
+
+
+        .embedded-content iframe {
+
+            width: 100%;
+
+            height: 100%;
+
+            border: none;
+
+        }
+
+
+
+        /* Two Column Layout */
+
+        .two-column {
+
+            display: flex;
+
+            gap: 40px;
+
+            align-items: center;
+
+        }
+
+
+
+        .two-column .col {
+
+            flex: 1;
+
+        }
+
+
+
+        /* Three Column Layout */
+
+        .three-column {
+
+            display: flex;
+
+            gap: 30px;
+
+        }
+
+
+
+        .three-column .col {
+
+            flex: 1;
+
+        }
+
+
+
+        /* Stats Section */
+
+        .stats {
+
+            background: var(--gradient);
+
+            color: var(--white);
+
+            text-align: center;
+
+            padding: 60px 0;
+
+        }
+
+
+
+        .stat-item {
+
+            margin-bottom: 30px;
+
+        }
+
+
+
+        .stat-number {
+
+            font-size: 3rem;
+
+            font-weight: 700;
+
+            margin-bottom: 10px;
+
+        }
+
+
+
+        .stat-label {
+
+            font-size: 1.2rem;
+
+            opacity: 0.9;
+
+        }
+
+
+
+        /* Incentive Options */
+
+        .incentive-options {
+
+            display: flex;
+
+            gap: 30px;
+
+            margin-top: 40px;
+
+        }
+
+
+
+        .option-card {
+
+            flex: 1;
+
+            text-align: center;
+
+            padding: 40px 30px;
+
+            border-radius: 10px;
+
+            transition: var(--transition);
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+
+        .option-card::before {
+
+            content: '';
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            right: 0;
+
+            bottom: 0;
+
+            background-size: cover;
+
+            background-position: center;
+
+            opacity: 0.2;
+
+            z-index: 0;
+
+        }
+
+
+
+        .option-card:hover {
+
+            transform: translateY(-10px);
+
+        }
+
+        
+
+        .option-card.anime {
+
+            background: linear-gradient(135deg, #FFC107 0%, #FF9800 100%);
+
+            color: white;
+
+        }
+
+        
+
+        .option-card.anime::before {
+
+            background-image: url('https://images-na.ssl-images-amazon.com/images/I/61PvUxinQlL._AC_UL210_SR210,210_.jpg');
+
+        }
+
+        
+
+        .option-card.game {
+
+            background: linear-gradient(135deg, #EC407A 0%, #E91E63 100%);
+
+            color: white;
+
+        }
+
+        
+
+        .option-card.game::before {
+
+            background-image: url('https://i.ebayimg.com/images/g/j6sAAeSw095orzUJ/s-l400.jpg');
+
+        }
+
+
+
+        .option-content {
+
+            position: relative;
+
+            z-index: 1;
+
+        }
+
+
+
+        .option-icon {
+
+            font-size: 3rem;
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        .option-card h3 {
+
+            font-size: 1.8rem;
+
+            margin-bottom: 15px;
+
+        }
+
+
+
+        /* Support Cards Section */
+
+        .support-cards {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 30px;
+
+            justify-content: center;
+
+            margin-top: 40px;
+
+        }
+
+
+
+        .support-card {
+
+            width: 280px;
+
+            background: var(--white);
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            box-shadow: var(--shadow);
+
+            transition: var(--transition);
+
+        }
+
+
+
+        .support-card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+
+        }
+
+
+
+        .support-card img {
+
+            width: 100%;
+
+            height: auto;
+
+            display: block;
+
+        }
+
+
+
+        .support-card-content {
+
+            padding: 20px;
+
+        }
+
+
+
+        .support-card h4 {
+
+            font-size: 1.2rem;
+
+            margin-bottom: 10px;
+
+            color: var(--text-dark);
+
+        }
+
+
+
+        .support-card p {
+
+            color: var(--text-light);
+
+            font-size: 0.9rem;
+
+        }
+
+
+
+        /* Feature Grid */
+
+        .feature-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 30px;
+
+            margin-top: 40px;
+
+        }
+
+
+
+        .feature-item {
+
+            background: var(--white);
+
+            border-radius: 10px;
+
+            padding: 30px;
+
+            box-shadow: var(--shadow);
+
+            transition: var(--transition);
+
+        }
+
+
+
+        .feature-item:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+
+        }
+
+
+
+        .feature-icon {
+
+            font-size: 2.5rem;
+
+            color: var(--primary);
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        .feature-item h3 {
+
+            font-size: 1.5rem;
+
+            margin-bottom: 15px;
+
+            color: var(--text-dark);
+
+        }
+
+
+
+        .feature-item p {
+
+            color: var(--text-light);
+
+        }
+
+
+
+        /* Footer */
+
+        footer {
+
+            background: linear-gradient(135deg, #FFC107 0%, #EC407A 100%);
+
+            color: var(--white);
+
+            padding: 60px 0 30px;
+
+        }
+
+
+
+        .footer-content {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: space-between;
+
+            margin-bottom: 40px;
+
+        }
+
+
+
+        .footer-col {
+
+            flex: 1;
+
+            min-width: 250px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+
+        .footer-col h3 {
+
+            font-size: 1.3rem;
+
+            margin-bottom: 20px;
+
+            position: relative;
+
+            padding-bottom: 10px;
+
+        }
+
+
+
+        .footer-col h3::after {
+
+            content: '';
+
+            position: absolute;
+
+            width: 40px;
+
+            height: 2px;
+
+            background-color: var(--primary);
+
+            bottom: 0;
+
+            left: 0;
+
+        }
+
+
+
+        .footer-col ul {
+
+            list-style: none;
+
+        }
+
+
+
+        .footer-col ul li {
+
+            margin-bottom: 10px;
+
+        }
+
+
+
+        .footer-col ul li a {
+
+            color: #d1d5db;
+
+            text-decoration: none;
+
+            transition: var(--transition);
+
+        }
+
+
+
+        .footer-col ul li a:hover {
+
+            color: var(--primary);
+
+            padding-left: 5px;
+
+        }
+
+
+
+        .social-links {
+
+            display: flex;
+
+            gap: 15px;
+
+            margin-top: 20px;
+
+        }
+
+
+
+        .social-links a {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 40px;
+
+            height: 40px;
+
+            background-color: rgba(255, 255, 255, 0.1);
+
+            border-radius: 50%;
+
+            color: var(--white);
+
+            transition: var(--transition);
+
+        }
+
+
+
+        .social-links a:hover {
+
+            background-color: var(--primary);
+
+            transform: translateY(-3px);
+
+        }
+
+
+
+        .copyright {
+
+            text-align: center;
+
+            padding-top: 30px;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+            color: #9ca3af;
+
+            font-size: 0.9rem;
+
+        }
+
+
+
+        /* Responsive Styles */
+
+        @media (max-width: 992px) {
+
+            .two-column, .three-column {
+
+                flex-direction: column;
+
+            }
+
+            
+
+            .incentive-options {
+
+                flex-direction: column;
+
+            }
+
+            
+
+            .hero h1 {
+
+                font-size: 2.5rem;
+
+            }
+
+            
+
+            .hero-logo {
+
+                max-width: 300px;
+
+            }
+
+        }
+
+
+
+        @media (max-width: 768px) {
+
+            .nav-menu {
+
+                position: fixed;
+
+                top: 80px;
+
+                left: -100%;
+
+                flex-direction: column;
+
+                background-color: var(--white);
+
+                width: 100%;
+
+                text-align: center;
+
+                transition: var(--transition);
+
+                box-shadow: var(--shadow);
+
+                padding: 20px 0;
+
+            }
+
+
+
+            .nav-menu.active {
+
+                left: 0;
+
+            }
+
+
+
+            .nav-menu li {
+
+                margin: 15px 0;
+
+            }
+
+
+
+            .hamburger {
+
+                display: block;
+
+            }
+
+
+
+            .hero h1 {
+
+                font-size: 2rem;
+
+            }
+
+
+
+            .hero p {
+
+                font-size: 1rem;
+
+            }
+
+
+
+            .section-title h2 {
+
+                font-size: 2rem;
+
+            }
+
+
+
+            .embedded-content {
+
+                height: 300px;
+
+            }
+
+            
+
+            .hero-logo {
+
+                max-width: 250px;
+
+            }
+
+            
+
+            .logo-img {
+
+                height: 40px;
+
+            }
+
+        }
+
+
+
+        @media (max-width: 576px) {
+
+            .hero {
+
+                padding: 60px 0;
+
+            }
+
+
+
+            section {
+
+                padding: 60px 0;
+
+            }
+
+
+
+            .card-content {
+
+                padding: 20px;
+
+            }
+
+
+
+            .embedded-content {
+
+                height: 200px;
+
+            }
+
+            
+
+            .hero-logo {
+
+                max-width: 200px;
+
+            }
+
+            
+
+            .logo-img {
+
+                height: 35px;
+
+            }
+
+        }
+
+    </style>
+
 </head>
-<body> <!Cuerpo: todo lo que el usuario verá en la página -->
-<h1>¡Hola, mundo!</h1> <!-- Encabezado principal -->
-<p>Esta es mi primera página web con HTML.</p> <!-- Un párrafo de texto -->
-<p>Soy Javier Saavedra</p>
-<l>Aqui una lista de los mejores juegos del mundo: </p>
-<ul>
- <li>1.Fortnite</li>
- <li>Gracias por ver !!!</li>
-<ul>
 
- <img src="imagen/foto.jpeg">
+<body>
 
-<a href="https://www.youtube.com/">Haga clic aquí</a>
-</body>
+    <!-- Header -->
 
+    <header>
+
+        <div class="container header-container">
+
+            <a href="#" class="logo">
+
+                <img src="https://static.wikia.nocookie.net/fictionalcrossover/images/3/35/Uma_Musume_Logo.png/revision/latest?cb=20240730000645" alt="Uma Musume Logo" class="logo-img">
+
+                <span>Uma Musume</span>
+
+            </a>
+
+            <div class="hamburger" id="hamburger">
+
+                <i class="fas fa-bars"></i>
+
+            </div>
+
+            <ul class="nav-menu" id="nav-menu">
+
+                <li><a href="#introduccion">Introducción</a></li>
+
+                <li><a href="#historia">Historia</a></li>
+
+                <li><a href="#incentivo">Incentivo</a></li>
+
+                <li><a href="#sistema-juego">Sistema de Juego</a></li>
+
+                <li><a href="#impacto">Impacto</a></li>
+
+                <li><a href="#contacto">Contacto</a></li>
+
+            </ul>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <div class="container hero-content">
+
+            <div class="hero-logo">
+
+                <img src="https://static.wikia.nocookie.net/fictionalcrossover/images/3/35/Uma_Musume_Logo.png/revision/latest?cb=20240730000645" alt="Uma Musume Logo">
+
+            </div>
+
+            <h1>Pretty Derby</h1>
+
+            <p>Descubre el fenómeno global que combina la emoción de las carreras de caballos con el encanto de las idols en una experiencia transmedia única.</p>
+
+            <a href="#introduccion" class="btn btn-secondary">Explorar Más</a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Introducción -->
+
+    <section id="introduccion">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>El Fenómeno Uma Musume</h2>
+
+                <p>Una franquicia transmedia que ha cautivado a millones con su combinación única de deporte, drama y entretenimiento.</p>
+
+            </div>
+
+            
+
+            <div class="two-column">
+
+                <div class="col">
+
+                    <div class="card">
+
+                        <div class="card-content">
+
+                            <div class="card-icon">
+
+                                <i class="fas fa-question-circle"></i>
+
+                            </div>
+
+                            <h3>¿Qué es Uma Musume?</h3>
+
+                            <p>Es una franquicia transmedia de medios cruzados producida por Cygames. Su concepto central es un universo donde los espíritus de caballos de carreras renombrados (principalmente japoneses) reencarnan como "chicas caballo".</p>
+
+                            <p>Estas adolescentes entrenan en academias especiales para competir en la serie de carreras de alto perfil "Twinkle Series".</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col">
+
+                    <div class="image-container">
+
+                        <img src="https://static.wikia.nocookie.net/umamusume/images/e/e0/Meisho_Doto_%28Main%29.png/revision/latest/scale-to-width/360?cb=20240731192544" alt="Meisho Doto - Uma Musume">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="two-column">
+
+                <div class="col">
+
+                    <div class="image-container">
+
+                        <img src="https://www.picclickimg.com/suAAAeSwU6ppAWdl/Uma-Musume-Pretty-Derby-Meisho-Doto-Peluche-Est%C3%A1ndar.webp" alt="Peluche Meisho Doto - Uma Musume">
+
+                    </div>
+
+                </div>
+
+                <div class="col">
+
+                    <div class="card">
+
+                        <div class="card-content">
+
+                            <div class="card-icon">
+
+                                <i class="fas fa-star"></i>
+
+                            </div>
+
+                            <h3>El Secreto de su Éxito</h3>
+
+                            <p>El verdadero producto que vende Cygames es la catarsis emocional. La franquicia ofrece a los jugadores la oportunidad de "corregir" la historia, guiando a campeones caídos a la victoria que la vida real les negó.</p>
+
+                            <p>Esta combinación de deporte, drama personal y elementos de idols crea una experiencia emocionalmente poderosa.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="embedded-content">
+
+                <!-- En un caso real, aquí iría un video embebido o aplicación -->
+
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+
+                    Video Promocional de Uma Musume
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Historia e Importancia -->
+
+    <section id="historia" style="background-color: var(--white);">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Historia y Fenómeno Global</h2>
+
+                <p>La magnitud financiera y el respeto por el material original que define la franquicia.</p>
+
+            </div>
+
+            
+
+            <div class="two-column">
+
+                <div class="col">
+
+                    <h3>Hitos Financieros: Un Imperio de $2.5 Mil Millones</h3>
+
+                    <p>El juego, lanzado en Japón en febrero de 2021, generó $95 millones de dólares solo en marzo de 2021. Para 2021, el juego acumuló aproximadamente 965 millones de dólares.</p>
+
+                    <p>En 2025, la franquicia superó un hito monumental: <strong>2.5 mil millones de dólares</strong> en ingresos de por vida solo en plataformas móviles.</p>
+
+                    <p>La expansión global continúa con la versión en inglés del videojuego lanzada globalmente en junio de 2025 (iOS, Android, Steam), marcando un "segundo cohete" estratégico para el crecimiento acelerado.</p>
+
+                </div>
+
+                <div class="col">
+
+                    <h3>El Compromiso con la Historia Real</h3>
+
+                    <p>La Fusión de Idols y Carreras: El creador clave, Akihiro Ishihara (director de la franquicia The IDOLM@STER antes de unirse a Cygames), fusionó la estructura de gestión de idols con las mecánicas de crianza de caballos.</p>
+
+                    <p>Reverencia Histórica: Cada "chica caballo" no solo tiene el nombre de un caballo real, sino que su personalidad, diseño y estilo de carrera son adaptaciones directas de su historia ecuestre.</p>
+
+                    <p>La Pesadilla Legal que Impulsó la Calidad: Cygames tuvo que contactar a cada propietario individual de los caballos para obtener permiso y licenciar el uso de los nombres, convirtiendo esta necesidad legal en un mandato de respeto por la fuente.</p>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="stats">
+
+                <div class="container">
+
+                    <div class="two-column">
+
+                        <div class="col">
+
+                            <div class="stat-item">
+
+                                <div class="stat-number">$2.5B</div>
+
+                                <div class="stat-label">Ingresos Globales</div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col">
+
+                            <div class="stat-item">
+
+                                <div class="stat-number">2025</div>
+
+                                <div class="stat-label">Lanzamiento Global</div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Incentivo -->
+
+    <section id="incentivo">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Cómo Entrar en la Franquicia</h2>
+
+                <p>Ofrecemos una clara ruta de entrada a los nuevos usuarios, destacando la sinergia entre los medios.</p>
+
+            </div>
+
+            
+
+            <div class="incentive-options">
+
+                <div class="option-card anime">
+
+                    <div class="option-content">
+
+                        <div class="option-icon">
+
+                            <i class="fas fa-film"></i>
+
+                        </div>
+
+                        <h3>Inicia por el Anime</h3>
+
+                        <p>El anime es el departamento de marketing más eficaz de la franquicia, generando familiaridad y demanda emocional.</p>
+
+                        <h4>Recomendación Clave:</h4>
+
+                        <p><strong>Umamusume: Pretty Derby Temporada 2 (2021)</strong></p>
+
+                        <p>Protagonista: Tokai Teio. Esta temporada es un éxito de crítica masivo, alabada por su desgarradora adaptación del drama de las lesiones de la vida real de Tokai Teio.</p>
+
+                    </div>
+
+                </div>
+
+                
+
+                <div class="option-card game">
+
+                    <div class="option-content">
+
+                        <div class="option-icon">
+
+                            <i class="fas fa-gamepad"></i>
+
+                        </div>
+
+                        <h3>Sumérgete en el Juego</h3>
+
+                        <p>El videojuego (disponible globalmente desde junio de 2025) es el motor económico y el centro gravitacional de la franquicia.</p>
+
+                        <p>Género: Es una "Simulación de Vida Deportiva", mezclando simulación de crianza, novela visual y juego de gacha.</p>
+
+                        <p>El juego te da el poder de la "terapia". Si el anime te hizo experimentar el trauma de Tokai Teio, el juego te permite tomar el control, evitar las lesiones y ganar la Triple Corona que la vida real le negó.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Sistema de Juego Expandido -->
+
+    <section id="sistema-juego" style="background-color: var(--white);">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Sistema de Juego y Mecánicas</h2>
+
+                <p>Descubre las complejas mecánicas que hacen de Uma Musume una experiencia única y adictiva.</p>
+
+            </div>
+
+            
+
+            <div class="two-column">
+
+                <div class="col">
+
+                    <h3>Sistema de Cartas de Soporte</h3>
+
+                    <p>Las cartas de soporte son elementos cruciales en el juego que afectan directamente el crecimiento y rendimiento de tus chicas caballo durante el entrenamiento.</p>
+
+                    <p>Cada carta representa un personaje de apoyo que otorga diferentes beneficios y habilidades especiales durante las sesiones de entrenamiento.</p>
+
+                    <p>Existen diferentes tipos de cartas de soporte, cada una especializada en mejorar estadísticas específicas como velocidad, resistencia, potencia, determinación e inteligencia.</p>
+
+                </div>
+
+                <div class="col">
+
+                    <div class="image-container">
+
+                        <img src="https://gametora.com/images/umamusume/supports/tex_support_card_30028.png" alt="Carta de Soporte - Uma Musume">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="two-column">
+
+                <div class="col">
+
+                    <div class="image-container">
+
+                        <img src="https://tr.rbxcdn.com/180DAY-6af8ca76356badc9efdeb930d6de8374/420/420/WaistAccessory/Webp/noFilter" alt="Accesorios de Uma Musume">
+
+                    </div>
+
+                </div>
+
+                <div class="col">
+
+                    <h3>Personalización y Accesorios</h3>
+
+                    <p>El sistema de personalización permite a los jugadores equipar a sus chicas caballo con una variedad de accesorios que no solo mejoran su apariencia, sino que también pueden afectar su rendimiento en las carreras.</p>
+
+                    <p>Desde cinturones decorativos hasta accesorios para el cabello, cada elemento añade un toque único a tus personajes favoritos.</p>
+
+                    <p>Los accesorios especiales a menudo se obtienen a través de eventos limitados o logros específicos dentro del juego.</p>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="feature-grid">
+
+                <div class="feature-item">
+
+                    <div class="feature-icon">
+
+                        <i class="fas fa-running"></i>
+
+                    </div>
+
+                    <h3>Mecánicas de Carrera</h3>
+
+                    <p>Las carreras en Uma Musume incorporan estrategias reales de carreras de caballos, incluyendo posicionamiento táctico, sprints finales y adaptación a diferentes tipos de terreno y distancias.</p>
+
+                </div>
+
+                
+
+                <div class="feature-item">
+
+                    <div class="feature-icon">
+
+                        <i class="fas fa-chart-line"></i>
+
+                    </div>
+
+                    <h3>Sistema de Herencia</h3>
+
+                    <p>El sistema de herencia permite transferir habilidades y estadísticas entre generaciones de chicas caballo, creando líneas de sangre únicas y mejorando el potencial de tus futuras campeonas.</p>
+
+                </div>
+
+                
+
+                <div class="feature-item">
+
+                    <div class="feature-icon">
+
+                        <i class="fas fa-music"></i>
+
+                    </div>
+
+                    <h3>Conciertos Winning Live</h3>
+
+                    <p>Después de cada victoria importante, tus chicas caballo realizan un concierto especial donde interpretan canciones únicas, combinando el atletismo con el entretenimiento idol.</p>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="support-cards">
+
+                <div class="support-card">
+
+                    <img src="https://gametora.com/images/umamusume/supports/tex_support_card_30028.png" alt="Carta de Soporte Especial">
+
+                    <div class="support-card-content">
+
+                        <h4>Carta de Soporte SSR</h4>
+
+                        <p>Cartas de máxima rareza que ofrecen habilidades exclusivas y mejoras significativas durante el entrenamiento.</p>
+
+                    </div>
+
+                </div>
+
+                
+
+                <div class="support-card">
+
+                    <img src="https://tr.rbxcdn.com/180DAY-6af8ca76356badc9efdeb930d6de8374/420/420/WaistAccessory/Webp/noFilter" alt="Accesorio Especial">
+
+                    <div class="support-card-content">
+
+                        <h4>Accesorios Limitados</h4>
+
+                        <p>Elementos cosméticos especiales obtenidos durante eventos temporales que añaden personalidad única a tus personajes.</p>
+
+                    </div>
+
+                </div>
+
+                
+
+                <div class="support-card">
+
+                    <div style="background: var(--gradient); height: 200px; display: flex; align-items: center; justify-content: center; color: white;">
+
+                        <i class="fas fa-gem" style="font-size: 3rem;"></i>
+
+                    </div>
+
+                    <div class="support-card-content">
+
+                        <h4>Recursos del Juego</h4>
+
+                        <p>Gemas, monedas y otros recursos esenciales para mejorar a tus chicas caballo y desbloquear contenido exclusivo.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Impacto y Legado -->
+
+    <section id="impacto" style="background-color: var(--white);">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Impacto y Legado</h2>
+
+                <p>La franquicia es más que un juego, incentivando la lealtad a través de su impacto cultural.</p>
+
+            </div>
+
+            
+
+            <div class="two-column">
+
+                <div class="col">
+
+                    <div class="card">
+
+                        <div class="card-content">
+
+                            <h3>Revitalización del Deporte Real</h3>
+
+                            <p>Uma Musume es reconocido por haber "revivido el interés por un deporte que muchos daban por muerto". Ha creado una nueva generación de fanáticos del anime que ahora visitan hipódromos reales.</p>
+
+                        </div>
+
+                    </div>
+
+                    
+
+                    <div class="card">
+
+                        <div class="card-content">
+
+                            <h3>Sinergia Industrial</h3>
+
+                            <p>La Japan Racing Association (JRA) pasó de distanciarse de la franquicia en 2021 a colaborar activamente con ella en 2024-2025, reconociendo su éxito cultural.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+
+                <div class="col">
+
+                    <div class="card">
+
+                        <div class="card-content">
+
+                            <h3>La Máquina de Idols</h3>
+
+                            <p>La recompensa de ganar una carrera importante en el juego es un concierto de idols en 3D llamado el "Winning Live". Esto se traduce en una exitosa línea de álbumes de música y conciertos masivos en la vida real con las actrices de voz.</p>
+
+                            <p>La canción icónica de la franquicia es "Umapyoi Densetsu", que fue certificada "Oro" en 2023 por superar los 50 millones de reproducciones.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="three-column">
+
+                <div class="col">
+
+                    <div class="card">
+
+                        <div class="card-content">
+
+                            <h3>Eventos en Vivo</h3>
+
+                            <p>Uma Musume organiza conciertos masivos con las actrices de voz, donde interpretan las canciones del juego y el anime, creando experiencias memorables para los fanáticos.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+
+                <div class="col">
+
+                    <div class="card">
+
+                        <div class="card-content">
+
+                            <h3>Colaboraciones Especiales</h3>
+
+                            <p>La franquicia ha colaborado con diversas marcas y eventos, expandiendo su alcance más allá del mundo del gaming y el anime.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+
+                <div class="col">
+
+                    <div class="card">
+
+                        <div class="card-content">
+
+                            <h3>Comunidad Global</h3>
+
+                            <p>Con el lanzamiento global, Uma Musume ha creado una comunidad internacional de fanáticos que comparten estrategias, fanart y experiencias
 
 
 </html> <!-- Fin del documento HTML -->
